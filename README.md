@@ -24,4 +24,11 @@ Things you may want to cover:
 * ...
 
 Ruby 2.5.1
+
 Rails 5.2.3
+
+A personal project I'm working on, just getting more comfortable with Ruby and Rails.
+
+Notes to self: 
+- Use impressionist to count page views
+- Use trix for text editor
