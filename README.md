@@ -16,6 +16,6 @@ Here's a great example of a forum: http://forum.azyrusthemes.com/02_topic.html
 
 
 Right now: 
-- ui_kit is most effed up branch
-- get_js_to_work (child branch of 'bootstrap' branch): The CSS works, but I can't get all the JS to work
-- bootstrap: I set up bootstrap_sass, and the CSS works
+
+- Front-end-gems has bootstrap-saas installed
+- All-in-dist: I tried to just copy the whole dist file. Didn't work either (The JS didn't work)
