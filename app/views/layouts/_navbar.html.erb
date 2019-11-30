@@ -21,21 +21,21 @@
   <%if user_signed_in? %>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Mon Profil
+        <%=user.username%>
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to "Mon profil", user_path(current_user.id), class:"dropdown-item" %>
-        <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
+        <%= link_to "My profile", user_path(current_user.id), class:"dropdown-item" %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
       </div>
     </div>
   <%else%>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Connexion
+        Login
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to "S'inscrire", new_user_registration_path, class:"dropdown-item" %>
-        <%= link_to "Se connecter", new_user_session_path, class:"dropdown-item" %>
+        <%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %>
+        <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %>
       </div>
     </div>
   <%end%>
