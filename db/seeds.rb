@@ -17,7 +17,6 @@ Post.destroy_all
               username: Faker::Name.first_name
               )
 end
-# User.find_each(&:save)
 puts 'Users created'
 
 
