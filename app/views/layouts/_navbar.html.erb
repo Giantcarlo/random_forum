@@ -3,7 +3,8 @@
   <%= link_to "Home", root_path, class:"navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarNav">
   </div>
-  <div class="mr-4"><button class= "btn btn-primary ">Create new content</button></div>
+  <div class="mr-4"><%= link_to 'Create new content', new_post_path, class:"btn btn-primary" %>
+  </div>
   <!--Dropdown changes depending on whether user is signed in or not.-->
   <%if user_signed_in? %>
     <div class="dropdown">
