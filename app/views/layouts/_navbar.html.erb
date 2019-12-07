@@ -30,6 +30,29 @@
   </nav>
 
 </header>
+<li class="dropdown">
+  <%if user_signed_in? %>
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%=user.username%>
+      </a>
+      <span class="dropdown-arrow"></span>
+      <ul class="dropdown-menu">
+        <li><%= link_to "My profile", user_path(current_user.id) %></li>
+        <li><%= link_to "Sign out", destroy_user_session_path, method: :delete%></li>
+      </ul>
+    </div>
+  <%else%>
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login</a>
+      <span class="dropdown-arrow"></span>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Sign up", new_user_registration_path, %></li>
+        <li><%= link_to "Log in", new_user_session_path,%></li>
+      </ul>
+    </div>
+  <%end%>
+</li>
+
 
 <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
   <a class="navbar-brand" href="#">Forum</a>
@@ -50,5 +73,6 @@
       </li>
       <li><a href="#fakelink">About Us</a></li>
       </ul>
+      <div class="mr-4"><button class= "btn btn-primary ">Create new content</button></div>
   </div><!-- /.navbar-collapse -->
 </nav><!-- /navbar -->
