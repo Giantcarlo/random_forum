@@ -6,5 +6,6 @@ class Post < ApplicationRecord
   validates :title, 
     presence: {message: "Post must have title"},
     length: { in: 5..40, message: "Title must be between 5 and 40 characters" }
-  validates :content, presence: {message: "Post must have content"}
+  validates :content, 
+    presence: {message: "Post must have content"}
 end
