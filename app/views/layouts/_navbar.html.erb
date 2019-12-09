@@ -1,38 +1,4 @@
 <header>  
-<<<<<<< HEAD
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to "Home", root_path, class:"navbar-brand" %>
-  <div class="collapse navbar-collapse" id="navbarNav">
-  </div>
-  <div class="mr-4"><%= link_to 'Create new content', new_post_path, class:"btn btn-primary" %>
-  </div>
-  <!--Dropdown changes depending on whether user is signed in or not.-->
-  <%if user_signed_in? %>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%=user.username%>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to "My profile", user_path(current_user.id), class:"dropdown-item" %>
-        <%= link_to "Sign out", destroy_user_session_path, method: :delete, class:"dropdown-item" %>
-      </div>
-    </div>
-  <%else%>
-    <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Login
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to "Sign up", new_user_registration_path, class:"dropdown-item" %>
-        <%= link_to "Log in", new_user_session_path, class:"dropdown-item" %>
-      </div>
-    </div>
-  <%end%>
-  </div>
-  </nav>
-
-</header>
-=======
   <nav class="navbar navbar-inverse navbar-embossed navbar-expand-lg" role="navigation">
     <a class="navbar-brand" href="#">Flat UI</a>
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse-01"></button>
@@ -76,4 +42,3 @@
     </div><!-- /.navbar-collapse -->
   </nav><!-- /navbar -->
 </header>
->>>>>>> staging
