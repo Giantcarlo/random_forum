@@ -8,8 +8,18 @@
   height: 120px;
 }
 
-#post-container:first-child {
-  border-radius: 50%;
+.post-row:nth-of-type(1){
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
 }
+.post-row:nth-last-child(1){
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+// .post-container:first-child div{
+//   border-top-left-radius: 6px;
+//   border-top-right-radius: 6px;
+// }
 
 
