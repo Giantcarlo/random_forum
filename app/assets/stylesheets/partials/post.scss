@@ -17,9 +17,12 @@
   border-bottom-right-radius: 6px;
 }
 
-// .post-container:first-child div{
-//   border-top-left-radius: 6px;
-//   border-top-right-radius: 6px;
-// }
-
-
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-height: 16px;     /* fallback */
+  max-height: 32px;      /* fallback */
+  -webkit-line-clamp: 2; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
