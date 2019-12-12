@@ -17,6 +17,8 @@
   border-bottom-right-radius: 6px;
 }
 
+
+// Ellipsis class is not responsive and needs to be changed.
 .ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -26,3 +28,4 @@
   -webkit-line-clamp: 2; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
