@@ -12,7 +12,19 @@ class PostController < ApplicationController
   end
 
   def create
+    @post = Post.find(params[:post_id])
+    if @post.save
+      flash[:success] = "Post created"
+      redirect_to root_path
+    else
+      flash[:error] = "Post failed to be created"
+        redirect_to root_path
+    end
+    else 
+      redirect_to root_path
+    
   end
+  
 
   def edit
   end

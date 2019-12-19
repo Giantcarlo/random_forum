@@ -1,18 +1,18 @@
-<%= form_with do |form| %>
+<%= form_with(model: @post, local: true) do |form| %>
 
   <div class="field">
-    <%=form.label :title%>
+    <%= form.label :title%>
     <%= form.text_field :title, id: :post_title, class:"title-form"%>
   </div>
 
   <div class="field">
-    <%=form.label :body%>
+    <%= form.label :body%>
     <%= form.hidden_field :title, id: :post_body%>
     <trix-editor input="post-body"></trix-editor>
   </div>
 
   <div>
-    <%= form.submit class:"btn btn-primary"%>
+    <%= form.submit "Create post", class:"btn btn-primary"%>
   </div>
 
 <%end%>
