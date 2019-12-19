@@ -14,6 +14,7 @@
 //= require popper
 //= require bootstrap
 //= require flat-ui
+//= require trix
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
