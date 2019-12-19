@@ -1,4 +1,18 @@
-<h1>Post#new</h1>
-<div class="container">
-  <trix-editor input="post-body"></trix-editor>
-</div>
+<%= form_with do |form| %>
+
+  <div class="field">
+    <%=form.label :title%>
+    <%= form.text_field :title, id: :post_title, class:"title-form"%>
+  </div>
+
+  <div class="field">
+    <%=form.label :body%>
+    <%= form.hidden_field :title, id: :post_body%>
+    <trix-editor input="post-body"></trix-editor>
+  </div>
+
+  <div>
+    <%= form.submit class:"btn btn-primary"%>
+  </div>
+
+<%end%>
