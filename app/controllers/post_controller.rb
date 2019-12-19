@@ -9,20 +9,18 @@ class PostController < ApplicationController
   end
 
   def new
+    # If I add a @post=Post.new here, the form_with is wrong. I might want to try with a form-for instead.
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    if @post.save
-      flash[:success] = "Post created"
-      redirect_to root_path
-    else
-      flash[:error] = "Post failed to be created"
-        redirect_to root_path
-    end
-    else 
-      redirect_to root_path
-    
+    # It never gets here
+    puts 60 * "$"
+    puts params
+    @post = Post.new(post_params)
+    # @title = params[:title]
+    # @content = params[:content]
+    # @post = Post.create(title:@title, user:current_user, content:@content)
+    @post.save
   end
   
 
@@ -33,5 +31,16 @@ class PostController < ApplicationController
   end
 
   def destroy
+  end
+
+  private 
+
+
+  def set_post
+    @post=Post.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
 end
