@@ -9,18 +9,18 @@ class PostController < ApplicationController
   end
 
   def new
-    # If I add a @post=Post.new here, the form_with is wrong. I might want to try with a form-for instead.
   end
 
   def create
-    # It never gets here
-    puts "$" * 60
-    puts params
-    @post = Post.new(post_params)
-    # @title = params[:title]
-    # @content = params[:content]
-    # @post = Post.create(title:@title, user:current_user, content:@content)
-    @post.save
+    puts params 
+    puts "&" * 60
+    puts post_params
+    @post = Post.create(user: current_user, title: params[:title], content: params[:content])
+    if @post.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
   end
   
 
