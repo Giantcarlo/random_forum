@@ -18,20 +18,21 @@ Front-end:
 
 
 
-<%= form_tag url_for(action: 'create'), method: "post" do %>
+
+<%= form_for(@post) do |f| %>
     <div class="field">
-      <%= label_tag "Title"%>
-      <%= text_field_tag 'title'%>
+      <%= f.label :title, "Title"%>
+      <%= f.text_field :title %>
     </div>
 
   <div class="field">
-    <%= label_tag 'Content'%>
-    <%= hidden_field_tag 'content'%>
-    <trix-editor input="post-body"></trix-editor>
+    <%= f.hidden_field :content, id: :post_content %>
+    <trix-editor input="post_content"></trix-editor>
   </div>
 
   <div>
-    <%= submit_tag "Create post", class:"btn btn-primary"%>
+    <%= f.submit "Create post", class:"btn btn-primary"%>
   </div>
 
 <% end %>
+
