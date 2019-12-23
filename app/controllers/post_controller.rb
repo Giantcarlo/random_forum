@@ -13,9 +13,6 @@ class PostController < ApplicationController
   end
 
   def create
-    puts params 
-    puts "&" * 60
-    puts post_params
     @post = Post.create(user: current_user, title: params[:title], content: params[:content])
     if @post.save
       redirect_to root_path

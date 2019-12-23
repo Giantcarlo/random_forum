@@ -10,7 +10,7 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true,
     format: { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "Please enter valid e-mail address" }
-  validates :username,
-    presence: true,
-    uniqueness: true
+  # validates :username,
+  #   presence: true,
+  #   uniqueness: true
 end
