@@ -14,7 +14,7 @@ class PostController < ApplicationController
 
   def create
     # It never gets here
-    puts 60 * "$"
+    puts "$" * 60
     puts params
     @post = Post.new(post_params)
     # @title = params[:title]
@@ -41,6 +41,6 @@ class PostController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.permit(:title, :content)
   end
 end
