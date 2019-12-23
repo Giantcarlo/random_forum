@@ -6,9 +6,8 @@
     </div>
 
   <div class="field">
-    <%= f.label :content, 'Content'%>
-    <%= f.hidden_field 'content'%>
-    <trix-editor></trix-editor>
+    <%= f.label :content, "Content"%>
+    <%= f.trix_editor :content, id: :post_content%>
   </div>
 
   <div>
