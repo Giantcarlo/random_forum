@@ -17,3 +17,21 @@ Front-end:
 - Here's the UI kit I'm using: http://designmodo.github.io/Flat-UI/ 
 
 
+
+<%= form_tag url_for(action: 'create'), method: "post" do %>
+    <div class="field">
+      <%= label_tag "Title"%>
+      <%= text_field_tag 'title'%>
+    </div>
+
+  <div class="field">
+    <%= label_tag 'Content'%>
+    <%= hidden_field_tag 'content'%>
+    <trix-editor input="post-body"></trix-editor>
+  </div>
+
+  <div>
+    <%= submit_tag "Create post", class:"btn btn-primary"%>
+  </div>
+
+<% end %>
