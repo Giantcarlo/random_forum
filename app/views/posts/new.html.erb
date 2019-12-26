@@ -1,6 +1,6 @@
 
 
-<%= form_with(model: @post, url: new_post_path) do |f| %>
+<%= form_with(model: @post) do |f| %>
     <div class="field">
       <%= f.label :title, "Title"%>
       <%= f.text_field :title %>
