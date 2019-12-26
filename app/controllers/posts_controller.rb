@@ -15,8 +15,10 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(user: current_user, title: params[:post][:title], content: params[:post][:content])
     if @post.save
+
       redirect_to root_path
     else
+      flash[:error] = @post.errors 
       render 'new'
     end
   end
