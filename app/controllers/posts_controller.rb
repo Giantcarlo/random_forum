@@ -17,8 +17,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      flash[:alert] = @post.errors.full_messages
-      render 'new'
+      redirect_to new_post_path, danger: "#{@post.errors.full_messages}"
+
     end
   end
   
