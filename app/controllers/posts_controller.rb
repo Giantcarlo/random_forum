@@ -18,7 +18,6 @@ class PostsController < ApplicationController
       redirect_to root_path
     else
       redirect_to new_post_path, danger: "Unable to create post"
-
     end
   end
   
