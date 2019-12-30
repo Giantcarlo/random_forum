@@ -18,21 +18,9 @@ Front-end:
 
 
 
-
-<%= form_for(@post) do |f| %>
-    <div class="field">
-      <%= f.label :title, "Title"%>
-      <%= f.text_field :title %>
-    </div>
-
-  <div class="field">
-    <%= f.hidden_field :content, id: :post_content %>
-    <trix-editor input="post_content"></trix-editor>
+<div class="col">
+  <div class="form-group has-success">
+    <input type="text" value="" placeholder="Success" class="form-control" />
+    <span class="input-icon fui-check-inverted"></span>
   </div>
-
-  <div>
-    <%= f.submit "Create post", class:"btn btn-primary"%>
-  </div>
-
-<% end %>
-
+</div>
