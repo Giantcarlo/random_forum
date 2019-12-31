@@ -9,6 +9,7 @@ class User < ApplicationRecord
   # Can't get it to work on update. It must be devise that doesn't allow it.
 
   has_many :posts
+  has_many :comments
 
 
   validates :email,
