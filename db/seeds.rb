@@ -10,6 +10,7 @@ require 'faker'
 
 User.destroy_all
 Post.destroy_all
+Comment.destroy_all
 
 5.times do
   User.create(email: Faker::Internet.email,
@@ -27,4 +28,13 @@ puts 'Users created'
               )
 end
 puts 'Posts created'
+
+20.times do 
+  Comment.create(
+              content: Faker::Movies::PrincessBride.quote,
+              user: User.all.to_a.sample,
+              post: Post.all.to_a.sample
+              )
+end
+puts 'Comments created'
 
