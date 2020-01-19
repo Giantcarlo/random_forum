@@ -1,15 +1,24 @@
-<div>
-  <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
+<div class="container mt-5">
 
-    <div class="field">
-      <%= f.hidden_field :content, id: :comment_content %>
-      <trix-editor class="trix-content" input="comment_content"></trix-editor>
-    </div>
+  <% if user_signed_in? %>
+  
+    <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
 
-    <div>
-      <%= f.submit "Create post", class:"btn btn-primary"%>
-    </div>
+      <div class="field">
+        <%= f.hidden_field :content, id: :comment_content %>
+        <trix-editor class="trix-content" input="comment_content"></trix-editor>
+      </div>
 
-  <% end %>
+      <div class="mt-2">
+        <%= f.submit "Create post", class:"btn btn-primary"%>
+      </div>
+
+    <% end%>
+
+  <%else%>
+
+    <div class="white-background">Sign in to leave a comment!</div>
+
+  <%end%>
 
 </div>
