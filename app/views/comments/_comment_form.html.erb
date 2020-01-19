@@ -1,0 +1,15 @@
+<div>
+  <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
+
+    <div class="field">
+      <%= f.hidden_field :content, id: :comment_content %>
+      <trix-editor class="trix-content" input="comment_content"></trix-editor>
+    </div>
+
+    <div>
+      <%= f.submit "Create post", class:"btn btn-primary"%>
+    </div>
+
+  <% end %>
+
+</div>
