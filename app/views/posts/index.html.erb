@@ -9,7 +9,7 @@
         </div>
         <div class="col-8">
           <div><h6><%= link_to post.title, post_path(post.id) %></h6></div>
-          <div class="ellipsis"><%= post.content%></div>
+          <div class="ellipsis trix-content"><%=sanitize post.content%></div>
         </div>
         <div class="col-2">
           Likes and views
