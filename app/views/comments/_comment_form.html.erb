@@ -1,19 +1,23 @@
 <div class="container mt-5">
 
   <% if user_signed_in? %>
+    <h4 class="mb-4">Leave a reply!</h4>
+
+    <div>
+      
+      <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
   
-    <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
-
-      <div class="field">
-        <%= f.hidden_field :content, id: :comment_content %>
-        <trix-editor class="trix-content" input="comment_content"></trix-editor>
-      </div>
-
-      <div class="mt-2">
-        <%= f.submit "Create post", class:"btn btn-primary"%>
-      </div>
-
-    <% end%>
+        <div class="field">
+          <%= f.hidden_field :content, id: :comment_content %>
+          <trix-editor class="trix-content" input="comment_content"></trix-editor>
+        </div>
+  
+        <div class="mt-2">
+          <%= f.submit "Create post", class:"btn btn-primary"%>
+        </div>
+  
+      <% end%>
+    </div>
 
   <%else%>
 
