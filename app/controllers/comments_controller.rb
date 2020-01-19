@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 
   def create
 
-    @comment = Comment.create(user: current_user, content: params[:comment][:content], post: Post.find(params[:post_id]))
+    @comment = Comment.create(user: current_user, content: params[:comment][:content], post: set_post )
 
     if @comment.save
       redirect_to root_path
@@ -12,5 +12,11 @@ class CommentsController < ApplicationController
   end
 
   def update
+  end
+
+  private 
+
+  def set_post
+    @post = Post.find(params[:post_id])
   end
 end
