@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.create(user: current_user, title: params[:post][:title], content: params[:post][:content])
+    @post = Post.create(user:current_user, title: params[:post][:title], content: params[:post][:content])
     if @post.save
       redirect_to root_path
     else
@@ -44,7 +44,8 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.permit(:title, :content)
+    # This doesn't do anything yet. I need to research how to use it (with Devise in particular)
+    params.require(:post).permit(:title, :content)
   end
 
   def verify_user
