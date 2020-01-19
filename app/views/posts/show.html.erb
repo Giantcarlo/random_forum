@@ -35,7 +35,7 @@
   <%end%>
 
   <div>
-    <%= form_with(model: @comment, url: post_comments_path) do |f| %>
+    <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
 
       <div class="field">
         <%= f.hidden_field :content, id: :post_content %>
