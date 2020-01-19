@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  before_action :verify_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+
+
   def index
     @posts = Post.all
     
@@ -41,5 +45,14 @@ class PostsController < ApplicationController
 
   def post_params
     params.permit(:title, :content)
+  end
+
+  def verify_user
+    # Verifies that the current user is the post's creator
+    set_post
+    unless @post.user == current_user
+      flash[:notice] = 'Access denied as you are not the creator of this post'
+      redirect_to root_path
+     end
   end
 end
