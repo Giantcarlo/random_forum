@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     puts params[:comment][:content]
     stripped_input = ActionController::Base.helpers.strip_tags(params[:comment][:content])
 
-    @comment = Comment.create(user: current_user, content: stripped_input, post: Post.find(params[:post_id]))
+    @comment = Comment.create(user: current_user, content: params[:comment][:content], post: Post.find(params[:post_id]))
 
     if @comment.save
       redirect_to root_path
