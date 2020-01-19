@@ -18,9 +18,12 @@ Front-end:
 
 
 
-<div class="col">
-  <div class="form-group has-success">
-    <input type="text" value="" placeholder="Success" class="form-control" />
-    <span class="input-icon fui-check-inverted"></span>
-  </div>
-</div>
+
+    <%= form_for(@comment, :url => "/posts/#{@post.id}/comments") do |f| %>
+
+        <%= text_area_tag 'content'%>
+        <br /> <br />
+
+        <%= submit_tag "Add comment", class:"btn btn-primary" %>
+
+    <% end %>

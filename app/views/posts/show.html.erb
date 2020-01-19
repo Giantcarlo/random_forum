@@ -35,15 +35,19 @@
   <%end%>
 
   <div>
+    <%= form_with(model: @comment, url: post_comments_path) do |f| %>
 
-    <%= form_for(@comment, :url => "/posts/#{@post.id}/comments") do |f| %>
+      <div class="field">
+        <%= f.hidden_field :content, id: :post_content %>
+        <trix-editor input="post_content"></trix-editor>
+      </div>
 
-        <%= text_area_tag 'content'%>
-        <br /> <br />
-
-        <%= submit_tag "Add comment", class:"btn btn-primary" %>
+      <div>
+        <%= f.submit "Create post", class:"btn btn-primary"%>
+      </div>
 
     <% end %>
+
   
   </div>
 
