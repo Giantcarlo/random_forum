@@ -1,1 +1,23 @@
-<%= @posts%>
+<div class="container"> <!-- container for all the boxes-->
+  
+  <div class="container post-container">
+    <%@posts.each do |post|%>
+
+      <div class="row post-row border">
+        <div class="col-2 text-center">
+          <span class="font-weight-bold"><%= post.user.username%></span>
+        </div>
+        <div class="col-8">
+          <div><h6><%= link_to post.title, post_path(post.id) %></h6></div>
+          <div class="ellipsis trix-content"><%=sanitize post.content%></div>
+        </div>
+        <div class="col-2">
+          Likes and views
+        </div>
+      </div>
+    <%end%>
+  </div>
+    
+
+</div>
+
