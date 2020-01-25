@@ -9,5 +9,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: [:create, :update, :delete]
   end
+  namespace :admin do
+    resources :users, :posts
+  end
+  
 
 end
