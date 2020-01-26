@@ -26,7 +26,15 @@ module Admin
     end
 
     def destroy
+      @user = User.find(params[:id])
 
+      if @user.is_admin? != true
+        @user.destroy
+        flash[:success] = "User successfully deleted"
+      else
+        flash[:error] = "You can't destroy a admin user"
+      end
+      redirect_to admin_users_path
     end
 
 

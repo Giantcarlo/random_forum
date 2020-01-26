@@ -18,12 +18,3 @@ Front-end:
 
 
 
-
-    <%= form_for(@comment, :url => "/posts/#{@post.id}/comments") do |f| %>
-
-        <%= text_area_tag 'content'%>
-        <br /> <br />
-
-        <%= submit_tag "Add comment", class:"btn btn-primary" %>
-
-    <% end %>
