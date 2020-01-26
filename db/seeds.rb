@@ -38,3 +38,10 @@ puts 'Posts created'
 end
 puts 'Comments created'
 
+
+User.create(
+  email: "stine@yopmail.com",
+  password: "gumshoe",
+  username: "Stine"
+)
+puts 'Admin created'

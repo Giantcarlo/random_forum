@@ -3,7 +3,6 @@ module Admin
 
     def index
       @posts = Post.all
-
     end
 
     def show
