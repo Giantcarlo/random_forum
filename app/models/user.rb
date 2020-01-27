@@ -8,8 +8,8 @@ class User < ApplicationRecord
   # validate :username_different_from_password, on: :update
   # Can't get it to work on update. It must be devise that doesn't allow it.
 
-  has_many :posts
-  has_many :comments
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
 
   validates :email,
