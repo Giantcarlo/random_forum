@@ -5,7 +5,7 @@
 
       <div class="row post-row border">
         <div class="col-2 text-center">
-          <span class="font-weight-bold"><%= post.user %></span>
+          <span class="font-weight-bold"><%= post.user.username %></span>
         </div>
         <div class="col-8">
           <div><h6><%= link_to post.title, post_path(post.id) %></h6></div>
