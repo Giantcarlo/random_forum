@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :join_table_post_categories
   has_many :categories, through: :join_table_post_categories
+  is_impressionable
 
   validates :title, 
     presence: {message: "Post must have title"},
