@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     set_post
     @comment = Comment.new
+    impressionist(@post)
   end
 
   def new
