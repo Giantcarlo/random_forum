@@ -9,12 +9,13 @@ module DeviseHelper
         <span aria-hidden="true">&times;</span>
       </button>
       <strong>
-       #{pluralize(resource.errors.count, "error")} must be fixed
+      #{pluralize(resource.errors.count, "error")} must be fixed
       </strong>
       #{messages}
     </div>
     HTML
 
     html.html_safe
+  
   end
 end
