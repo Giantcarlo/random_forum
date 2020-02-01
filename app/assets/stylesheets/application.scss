@@ -16,3 +16,19 @@
 .gray-container > .white-background {
   margin: 3px;
 }
+
+
+/*flash*/
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #d62c1a;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: #d8ebf0;
+  border-color: #a7dae0;
+  color: #34495e;
+  text-align: left;
+}
