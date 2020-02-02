@@ -36,18 +36,12 @@ class PostsController < ApplicationController
   end
 
   def lock_post
-    puts '5' * 60
-    puts params
-    puts params[:post_id]
     @post = Post.find(params[:post_id])
     if @post.update(post_locked_params)
       redirect_to post_path(@post.id)
     else
       render 'edit'
     end
-
-    
-
   end
 
   def destroy

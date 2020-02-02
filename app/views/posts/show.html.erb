@@ -6,7 +6,7 @@
     </div>
     <div>
       <%if current_user.try(:is_moderator?)%>
-        <!-- If user is moderator, show switch to lock post-->
+        <!-- If user is moderator, show checkbox to lock post-->
         <%= form_for(@post, url: post_lock_post_path(@post.id), method: :put) do |f| %>
           <div class="field">
             <%= f.label "Lock Post" %> <br />
