@@ -1,7 +1,17 @@
 <div class="col">
-  <div class="container">
-    <h4><%=@post.title%></h4>
-    <h6><%=@post.user.username%></h6>
+  <div class="d-flex justify-content-around">
+    <div>
+      <h4><%=@post.title%></h4>
+      <h6><%=@post.user.username%></h6>
+    </div>
+    <div>
+      <%if current_user.try(:is_moderator?)%>
+        <div class="bootstrap-switch-container">
+          <label class="boostrap-switch-label">ON</label>
+        </div>
+      <%else%>
+      <%end%>
+    </div>
   </div>
   <!-- The post itself -->
   <div class="container gray-container">
