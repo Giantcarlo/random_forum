@@ -36,7 +36,16 @@ class PostsController < ApplicationController
   end
 
   def lock_post
-    set_post
+    puts '5' * 60
+    puts params
+    puts params[:post_id]
+    @post = Post.find(params[:post_id])
+    if @post.update(post_locked_params)
+      redirect_to post_path(@post.id)
+    else
+      render 'edit'
+    end
+
     
 
   end
@@ -54,6 +63,10 @@ class PostsController < ApplicationController
   def post_params
     # This doesn't do anything yet. I need to research how to use it (with Devise in particular)
     params.require(:post).permit(:title, :content)
+  end
+
+  def post_locked_params
+    params.require(:post).permit(:is_locked)
   end
 
   def verify_user
