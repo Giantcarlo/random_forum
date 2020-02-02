@@ -6,15 +6,14 @@
     </div>
     <div>
       <%if current_user.try(:is_moderator?)%>
-        <div class="bootstrap-switch-container">
-          <label class="boostrap-switch-label">ON</label>
-        </div>
-        <div class="bootstrap-switch-container" style="">
-          <span class="bootstrap-switch-handle-on bootstrap-switch-primary">ON</span>
-          <label class="bootstrap-switch-label">&nbsp;</label>
-          <span class="bootstrap-switch-handle-off bootstrap-switch-default">OFF</span>
-          <input type="checkbox" checked="" data-toggle="switch" id="custom-switch-01">
-        </div>
+        <!-- If user is moderator, show switch to lock post-->
+        <%= form_for(@post, url: post_lock_post_path(@post.id), method: :put) do |f| %>
+          <div class="field">
+            <%= f.label "Lock Post" %> <br />
+            <%= f.check_box :is_locked %> <br />
+          </div>
+          <%= f.submit "Submit", class: "btn" %>
+        <%end%>
       <%end%>
     </div>
   </div>

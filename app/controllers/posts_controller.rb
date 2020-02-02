@@ -35,6 +35,12 @@ class PostsController < ApplicationController
   def update
   end
 
+  def lock_post
+    set_post
+    
+
+  end
+
   def destroy
   end
 

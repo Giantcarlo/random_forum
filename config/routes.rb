@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root 'posts#index'
   devise_for :users 
 
-  resources :posts
+  resources :posts do 
+    put 'lock_post'
+  end
   resources :users, only: [:edit, :update]
   resources :posts do
     resources :comments, only: [:create, :update, :delete]

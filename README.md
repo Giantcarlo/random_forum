@@ -17,3 +17,8 @@ Front-end:
 - Here's the UI kit I'm using: http://designmodo.github.io/Flat-UI/ 
 
 
+Code for switch:
+<div>
+  <input type="checkbox" checked data-toggle="switch" id="custom-switch-01" />
+</div>
+
