@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :verify_user, only: [:edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
   impressionist :actions=>[:show]
-  helper_method :is_moderator?
 
 
   def index
