@@ -32,7 +32,7 @@ module Admin
         @user.destroy
         flash[:success] = "User successfully deleted"
       else
-        flash[:error] = "You can't destroy a admin user"
+        flash[:error] = "You can't destroy an admin"
       end
       redirect_to admin_users_path
     end
