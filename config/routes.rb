@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update, :delete]
   end
   namespace :admin do
+    root to: "admin/posts#index"
     resources :users, :posts
   end
   
