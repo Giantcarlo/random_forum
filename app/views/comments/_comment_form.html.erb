@@ -1,10 +1,18 @@
 <div class="container mt-5">
 
-  <% if user_signed_in? %>
+<!-- Outline of "ifs" :
+If post is locked...
+If user signed in && post is not locked...
+If user not signed in && post is not locked...-->
+  <% if @post.is_locked %>
+
+    <div class="white-background">This post is locked.</div>
+
+  <% elsif user_signed_in? %>
+
     <h4 class="mb-4">Leave a reply!</h4>
 
     <div>
-      
       <%= form_with(model: @comment, url: post_comments_path(@post.id)) do |f| %>
   
         <div class="field">
@@ -15,14 +23,15 @@
         <div class="mt-2">
           <%= f.submit "Create post", class:"btn btn-primary"%>
         </div>
-  
+
       <% end%>
     </div>
 
-  <%else%>
+  <% else %> 
 
-    <div class="white-background">Sign in to leave a comment!</div>
+    <div class="white-background">Sign in to leave a reply!</div>
 
   <%end%>
 
+ 
 </div>
