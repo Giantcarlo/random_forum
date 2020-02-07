@@ -10,6 +10,7 @@
       <th scope="col">Username</th>
       <th scope="col">Email</th>
       <th scope="col">Date joined</th>
+      <th scope="col">Is moderator?</th>
       <th scope="col">Delete</th>
     </tr>
   </thead>
@@ -20,6 +21,7 @@
         <td><%=user.username%></td>
         <td><%=user.email%></td>
         <td><%=user.created_at.strftime("%d-%m-%Y") %></td>
+        <td><%=user.is_moderator %></td>
         <td><%= link_to 'Delete User', admin_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
       </tr>
     <%end%>
