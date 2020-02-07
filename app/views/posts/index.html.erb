@@ -7,9 +7,12 @@
         <div class="col-2 d-flex justify-content-center align-self-center">
           <span class="font-weight-bold"><%= post.user.username %></span>
         </div>
-        <div class="col-8">
+        <div class="col-7">
           <div><h6><%= link_to post.title, post_path(post.id) %></h6></div>
           <div class="ellipsis trix-content"><%=sanitize post.content%></div>
+        </div>
+        <div class="col-1 d-flex justify-content-center align-self-center">
+          <% if post.is_locked%> <span class="fui-lock"> <%end%> </span>
         </div>
         <div class="col-2 d-flex justify-content-center align-self-center">
         <!--Comments and views-->
