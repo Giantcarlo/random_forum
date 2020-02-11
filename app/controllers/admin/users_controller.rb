@@ -22,6 +22,7 @@ module Admin
     end 
 
     def update
+      puts "60" * 80
 
     end
 

@@ -22,4 +22,12 @@ Code for switch:
   <input type="checkbox" checked data-toggle="switch" id="custom-switch-01" />
 </div>
 
+ <label class="checkbox" for="checkbox1">
+            <input type="checkbox" value="" id="checkbox1" data-toggle="checkbox">
+            Unchecked
+          </label>
+          <label class="checkbox" for="checkbox2">
+            <input type="checkbox" checked="checked" value="" id="checkbox2" data-toggle="checkbox" checked="">
+            Checked
+          </label>
 
