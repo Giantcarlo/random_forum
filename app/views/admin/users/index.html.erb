@@ -22,8 +22,8 @@
         <td><%=user.email%></td>
         <td><%=user.created_at.strftime("%d-%m-%Y") %></td>
         <td>  
-          <%= form_for :user, :method => :put do |form| %>
-            <%= form.radio_button:_status, :is_moderator, :checked => (user.is_moderator) %>
+          <%= form_for :user, url: {action: "update"}, :method => :put, remote: true do |form| %>
+            <%= form.radio_button:_status, :is_moderator, :checked => (user.is_moderator) %> 
             <%= form.submit 'Update moderator status'%>
           <% end %>
           

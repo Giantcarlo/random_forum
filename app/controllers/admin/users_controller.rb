@@ -26,6 +26,7 @@ module Admin
 
     end
 
+
     def destroy
       @user = User.find(params[:id])
 
