@@ -1,7 +1,10 @@
-<%= form_for :user, :method => :put do |f| %>
-  <%= f.radio_button :is_moderator %>
 
-  <%= f.submit%>
+
+<%= form_for :user, :method => :put do |f| %>
+
+  <%= f.radio_button:_status, :is_moderator, user.is_moderator %>
+
+  <%= f.submit 'Update admin status'%>
 
 <%end%>
 
