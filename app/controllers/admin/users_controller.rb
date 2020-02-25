@@ -22,6 +22,14 @@ module Admin
     end 
 
     def update
+      puts params
+      user_params
+
+      puts "70" * 80
+
+    end
+
+    def update_moderator_status
       puts "60" * 80
 
     end
@@ -37,6 +45,12 @@ module Admin
         flash[:error] = "You can't destroy an admin"
       end
       redirect_to admin_users_path
+    end
+
+    private
+
+    def user_params
+      params.require(:user).permit(:user => [:_status])
     end
 
 

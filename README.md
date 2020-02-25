@@ -22,4 +22,3 @@ Code for switch:
   <input type="checkbox" checked data-toggle="switch" id="custom-switch-01" />
 </div>
 
-<%= check_box_tag "person[admin]", "1", @person.company.admin? %>
