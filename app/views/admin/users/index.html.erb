@@ -22,8 +22,11 @@
         <td><%=user.email%></td>
         <td><%=user.created_at.strftime("%d-%m-%Y") %></td>
         <td>  
+          <%= form_for :user, :method => :put do |form| %>
+            <%= form.radio_button:_status, :is_moderator, :checked => (user.is_moderator) %>
+            <%= form.submit 'Update moderator status'%>
+          <% end %>
           
-          <%=render 'is_moderator_form'%>
         </td>
         <td><%= link_to 'Delete User', admin_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
       </tr>
