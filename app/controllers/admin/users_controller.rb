@@ -22,7 +22,6 @@ module Admin
     end 
 
     def update
-      puts params
       user_params
 
       puts "70" * 80
@@ -50,7 +49,7 @@ module Admin
     private
 
     def user_params
-      params.require(:user).permit(:user => [:_status])
+      params.require(:user).permit(:_status)
     end
 
 
