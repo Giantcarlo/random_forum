@@ -22,6 +22,7 @@ module Admin
     end 
 
     def update
+      puts params
       user_params
 
       puts "70" * 80
