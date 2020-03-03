@@ -33,6 +33,15 @@ module Admin
 
     def update_moderator_status
       puts "60" * 80
+      puts params
+      @user = User.find_by_id(params[:id])
+      if @user.update(user_params)
+        redirect_to admin_users_path
+      else
+
+        puts "you can't delete the last moderator"
+      end
+      puts @user
 
     end
 
@@ -53,7 +62,7 @@ module Admin
 
     def user_params
       #params.require(:user).permit([:is_moderator])
-      #params.require(:user).permit(:is_moderator)
+      params.require(:user).permit(:is_moderator)
 
     end
 
