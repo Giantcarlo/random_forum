@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: "admin/posts#index"
     resources :users, :posts
+    patch '/users/:id/update_moderator_status',to:'/admin/users#update_moderator_status' , as: :update_moderator_status
 
   end
   
