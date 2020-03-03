@@ -19,9 +19,14 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true
 
+
+    private 
+
   def username_different_from_password
     if username == password
       errors.add(:username, " cannot be the same as password")
     end
   end
+
+
 end

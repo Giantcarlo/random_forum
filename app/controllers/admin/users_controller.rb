@@ -1,6 +1,8 @@
 module Admin 
   class UsersController < ApplicationController
 
+    #before_action: :last_moderator, only: [:update_moderator_status]
+    
     def index
       @users = User.all
     end
@@ -27,22 +29,20 @@ module Admin
     end
 
     def update_moderator_status
-      puts "60" * 80
-      puts params
-      @user = User.find_by_id(params[:id])
+      set_user
+      
       if @user.update(user_params)
         flash[:success] = "Moderator status updated"
       else
         flash[:error] = "You must have at least one moderator"
       end
       redirect_to admin_users_path
-      puts @user
 
     end
 
 
     def destroy
-      @user = User.find(params[:id])
+      set_user
 
       if @user.is_admin? != true
         @user.destroy
@@ -55,10 +55,18 @@ module Admin
 
     private
 
-    def user_params
-      #params.require(:user).permit([:is_moderator])
-      params.require(:user).permit(:is_moderator)
+    def set_user
+      @user = User.find(params[:id])
+    end
 
+    def user_params
+      params.require(:user).permit(:is_moderator)
+    end
+
+    def last_moderator
+      set_user
+
+       
     end
 
 
