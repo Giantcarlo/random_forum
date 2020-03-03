@@ -22,10 +22,12 @@ module Admin
     end 
 
     def update
-      puts params
-      user_params
-
       puts "70" * 80
+
+      puts params
+      User.update_attribute(:is_moderator)
+      
+
 
     end
 
@@ -50,9 +52,10 @@ module Admin
     private
 
     def user_params
-      params.require(:user).permit(:_status)
-    end
+      #params.require(:user).permit([:is_moderator])
+      #params.require(:user).permit(:is_moderator)
 
+    end
 
 
 
