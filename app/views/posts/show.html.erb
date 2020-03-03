@@ -9,10 +9,10 @@
         <!-- If user is moderator, show checkbox to lock post-->
         <%= form_for(@post, url: post_lock_post_path(@post.id), method: :put) do |f| %>
           <div class="field">
-            <%= f.label "Lock Post" %> <br />
-            <%= f.check_box :is_locked %> <br />
+            <%= f.label "Lock Post:" %> 
+            <%= f.check_box :is_locked %> 
           </div>
-          <%= f.submit "Submit", class: "btn" %>
+          <%= f.submit "Submit", class: "btn btn-small btn-inverse" %>
         <%end%>
       <%end%>
     </div>
