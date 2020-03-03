@@ -25,4 +25,3 @@ Code for switch:
 Need to: 
 - Keep same order of list (have moderators always at bottom)
 - Make admin different color in list
-- Validation to prevent deleting last moderator

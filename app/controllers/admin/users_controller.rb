@@ -1,10 +1,9 @@
 module Admin 
   class UsersController < ApplicationController
 
-    #before_action: :last_moderator, only: [:update_moderator_status]
     
     def index
-      @users = User.all
+      @users = User.order(created_at: :asc)
     end
 
     def show
@@ -30,9 +29,9 @@ module Admin
 
     def update_moderator_status
       set_user
-      
+
       if @user.update(user_params)
-        flash[:success] = "Moderator status updated"
+        flash[:success] = "#{@user.username}'s moderator status was updated"
       else
         flash[:error] = "You must have at least one moderator"
       end
@@ -63,11 +62,6 @@ module Admin
       params.require(:user).permit(:is_moderator)
     end
 
-    def last_moderator
-      set_user
-
-       
-    end
 
 
 

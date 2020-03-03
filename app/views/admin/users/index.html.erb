@@ -24,11 +24,11 @@
         <td>  
           <%= form_for user, url: admin_update_moderator_status_path(user.id), :method => :patch do |form| %>
             <%= form.check_box :is_moderator, checked: user.is_moderator %> 
-            <%= form.submit 'Update moderator status'%>
+            <%= form.submit 'Update mod. status', class: "btn btn-sm btn-default"%>
           <% end %>
           
         </td>
-        <td><%= link_to 'Delete User', admin_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-danger" %></td>
+        <td><%= link_to 'Delete User', admin_user_path(user.id), :method => :delete, data: { confirm: 'Are you sure?' }, :class=>"btn btn-sm btn-danger" %></td>
       </tr>
     <%end%>
   </tbody>
