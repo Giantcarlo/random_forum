@@ -36,11 +36,13 @@ module Admin
       puts params
       @user = User.find_by_id(params[:id])
       if @user.update(user_params)
-        redirect_to admin_users_path
+        flash[:success] = "Moderator status updated"
       else
 
         puts "you can't delete the last moderator"
+        flash[:error] = "You must have at least one moderator"
       end
+      redirect_to admin_users_path
       puts @user
 
     end
