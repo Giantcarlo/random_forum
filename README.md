@@ -22,3 +22,7 @@ Code for switch:
   <input type="checkbox" checked data-toggle="switch" id="custom-switch-01" />
 </div>
 
+Need to: 
+- Keep same order of list (have moderators always at bottom)
+- Make admin different color in list
+- Validation to prevent deleting last moderator

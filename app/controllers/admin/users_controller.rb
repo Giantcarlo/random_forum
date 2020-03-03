@@ -22,11 +22,6 @@ module Admin
     end 
 
     def update
-      puts "70" * 80
-
-      puts params
-      User.update_attribute(:is_moderator)
-      
 
 
     end
@@ -38,8 +33,6 @@ module Admin
       if @user.update(user_params)
         flash[:success] = "Moderator status updated"
       else
-
-        puts "you can't delete the last moderator"
         flash[:error] = "You must have at least one moderator"
       end
       redirect_to admin_users_path
